@@ -89,12 +89,65 @@ internal class Ejemplos
         foreach (var par in caso.GetDiccionario())
             Console.WriteLine($"Clave: {par.Key} - {par.Value.Nombre} - Promedio: {par.Value.Promedio}");
         Console.WriteLine("");
-
     }
-
+    
     //Realizar una llamada a cada método definido en CasoLinq y mostar por consola según corresponda
     public static void EjemploLinq()
     {
+        var caso = new CasoLinq();
+        
+        //primer libro
+        Console.WriteLine("========== PRIMER LIBRO ==========");
+        Console.WriteLine(caso.GetPrimero());
+        Console.WriteLine("");
 
+        //ultimo libro
+        Console.WriteLine("========== ÚLTIMO LIBRO ==========");
+        Console.WriteLine(caso.GetUltimo());
+        Console.WriteLine("");
+
+        //total precios
+        Console.WriteLine("========== TOTAL PRECIOS ==========");
+        Console.WriteLine(caso.GetTotalPrecios());
+        Console.WriteLine("");
+
+        //promedio precios
+        Console.WriteLine("========== PROMEDIO PRECIOS  ==========");
+        Console.WriteLine(caso.GetPromedioPrecios().ToString("F2"));
+        Console.WriteLine("");
+
+        //lista por id mayor a 15
+        Console.WriteLine("========== LISTA POR ID > 15 ==========");
+        foreach (var libro in caso.GetListById())
+            Console.WriteLine(libro);
+        Console.WriteLine("");
+
+        //lista de libros
+        Console.WriteLine("========== LISTA DE LIBROS ==========");
+        foreach (var libro in caso.GetLibros())
+            Console.WriteLine(libro);
+        Console.WriteLine("");
+
+        //libro mas caro
+        Console.WriteLine("========== LIBRO MÁS CARO ==========");
+        Console.WriteLine(caso.GetMayorPrecio());
+        Console.WriteLine("");
+
+        //libro mas barato
+        Console.WriteLine("========== LIBRO MÁS BARATO ==========");
+        Console.WriteLine(caso.GetMenorPrecio());
+        Console.WriteLine("");
+
+        //libro con precio mayor al promedio
+        Console.WriteLine("========== LIBROS CON PRECIO MAYOR AL PROMEDIO ==========");
+        foreach (var libro in caso.GetMayorPromedio())
+            Console.WriteLine(libro);
+        Console.WriteLine("");
+
+        //libros ordenados por título
+        Console.WriteLine("========== LIBROS ORDENADOS POR TÍTULO DESCENDENTE ==========");
+        foreach (var libro in caso.GetOrdenadosPorTitulo())
+            Console.WriteLine(libro);
     }
 }
+
