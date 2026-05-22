@@ -13,6 +13,11 @@ public class Libro
         Precio = precio;
     }
 
+    public override string ToString()
+    {
+        return $"{Id} - {Titulo} - {Precio.ToString("C")}";
+    }
+
     public static List<Libro> CrearLista()
     {
         return new List<Libro>
